@@ -1,0 +1,14 @@
+.containerHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLinkStyled {
+  text-decoration: none;
+}
+
+.listStyled {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
