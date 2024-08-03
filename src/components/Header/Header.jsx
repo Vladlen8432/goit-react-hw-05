@@ -3,22 +3,22 @@ import css from "./header.module.css";
 
 const Header = () => {
   return (
-    <div>
-      <header className={css.containerHeader}>
-        <h1>
-          <NavLink className={css.navLinkStyled} to="/">
-            Logo✌️
+    <div className={css.containerHeader}>
+      <header className={css.headerItem}>
+        <h1 className={css.mainLogo}>
+          <NavLink className={css.logoStyled} to="/">
+            TOP MOVIES
           </NavLink>
         </h1>
         <nav>
-          <ul className={css.listStyled}>
+          <ul className={css.listHeader}>
             <li>
-              <NavLink className={css.navLinkStyled} to="/">
+              <NavLink className={css.navLinkHeader} to="/">
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink className={css.navLinkStyled} to="/movies">
+              <NavLink className={css.navLinkHeader} to="/movies">
                 Movies
               </NavLink>
             </li>

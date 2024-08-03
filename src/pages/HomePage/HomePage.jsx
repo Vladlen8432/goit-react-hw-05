@@ -7,7 +7,7 @@ const HomePage = () => {
   const { movies, isLoading, error } = useFetchTrending();
 
   return (
-    <>
+    <div>
       {isLoading && (
         <div>
           {/* <Loader /> */}
@@ -18,7 +18,7 @@ const HomePage = () => {
       {isLoading === false && movies.length > 0 && (
         <MoviesList movies={movies} />
       )}
-    </>
+    </div>
   );
 };
 
