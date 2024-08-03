@@ -17,9 +17,15 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const location = useLocation();
-  const previousLocation = location.state;
+  const [previousLocation, setPreviousLocation] = useState(
+    location.state?.from || "/"
+  );
 
   useEffect(() => {
+    if (location.state?.from) {
+      setPreviousLocation(location.state.from);
+    }
+
     const fetchMovieDetails = async () => {
       try {
         const details = await getMovieDetails(movieId);
@@ -30,7 +36,20 @@ const MovieDetailsPage = () => {
     };
 
     fetchMovieDetails();
-  }, [movieId]);
+  }, [movieId, location.state]);
+
+  // useEffect(() => {
+  //   const fetchMovieDetails = async () => {
+  //     try {
+  //       const details = await getMovieDetails(movieId);
+  //       setMovieDetails(details);
+  //     } catch (error) {
+  //       console.error("Error fetching movie details:", error);
+  //     }
+  //   };
+
+  //   fetchMovieDetails();
+  // }, [movieId]);
 
   if (!movieDetails) {
     return <div>Loading...</div>;
