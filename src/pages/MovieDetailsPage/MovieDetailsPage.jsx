@@ -9,7 +9,7 @@ import {
 
 import MovieCast from "../../components/MovieCast/MovieCast";
 import MovieReviews from "../../components/MovieReviews/MovieReviews";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getMovieDetails } from "../../services/api";
 import css from "./movieDetailsPage.module.css";
 
@@ -17,13 +17,11 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const location = useLocation();
-  const [previousLocation, setPreviousLocation] = useState(
-    location.state?.from || "/"
-  );
+  const previousLocation = useRef(location.state?.from || "/");
 
   useEffect(() => {
     if (location.state?.from) {
-      setPreviousLocation(location.state.from);
+      previousLocation.current = location.state.from;
     }
 
     const fetchMovieDetails = async () => {
@@ -38,26 +36,13 @@ const MovieDetailsPage = () => {
     fetchMovieDetails();
   }, [movieId, location.state]);
 
-  // useEffect(() => {
-  //   const fetchMovieDetails = async () => {
-  //     try {
-  //       const details = await getMovieDetails(movieId);
-  //       setMovieDetails(details);
-  //     } catch (error) {
-  //       console.error("Error fetching movie details:", error);
-  //     }
-  //   };
-
-  //   fetchMovieDetails();
-  // }, [movieId]);
-
   if (!movieDetails) {
     return <div>Loading...</div>;
   }
 
   return (
     <div className={css.containerMovieDetails}>
-      <Link className={css.goBackLink} to={previousLocation}>
+      <Link className={css.goBackLink} to={previousLocation.current}>
         Go back
       </Link>
       {movieDetails ? (

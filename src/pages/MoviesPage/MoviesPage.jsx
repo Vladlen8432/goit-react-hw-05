@@ -1,4 +1,4 @@
-import MoviesList from "../../components/MoviesList/MoviesList";
+import MoviesList from "../../components/MovieList/MovieList";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import { useFetchByQuery } from '../../hooks/useFetchByQuery';
 

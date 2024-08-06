@@ -1,0 +1,13 @@
+.listHeader {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.navLinkHeader {
+  text-decoration: none;
+  color: #aebbc3;
+}

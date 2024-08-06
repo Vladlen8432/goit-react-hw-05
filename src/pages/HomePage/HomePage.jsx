@@ -1,7 +1,7 @@
 // import { NavLink } from "react-router-dom";
 
 import { useFetchTrending } from "../../hooks/useFetchTrending";
-import MoviesList from "../../components/MoviesList/MoviesList";
+import MoviesList from "../../components/MovieList/MovieList";
 
 const HomePage = () => {
   const { movies, isLoading, error } = useFetchTrending();
