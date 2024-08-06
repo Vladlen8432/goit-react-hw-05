@@ -1,14 +1,11 @@
 import {
   NavLink,
-  Routes,
-  Route,
   useParams,
   Link,
   useLocation,
+  Outlet,
 } from "react-router-dom";
 
-import MovieCast from "../../components/MovieCast/MovieCast";
-import MovieReviews from "../../components/MovieReviews/MovieReviews";
 import { useEffect, useRef, useState } from "react";
 import { getMovieDetails } from "../../services/api";
 import css from "./movieDetailsPage.module.css";
@@ -75,15 +72,11 @@ const MovieDetailsPage = () => {
               </li>
             </ul>
           </div>
+          <Outlet />
         </div>
       ) : (
         <p>Loading...</p>
       )}
-
-      <Routes>
-        <Route path="cast" element={<MovieCast />} />
-        <Route path="reviews" element={<MovieReviews />} />
-      </Routes>
     </div>
   );
 };
