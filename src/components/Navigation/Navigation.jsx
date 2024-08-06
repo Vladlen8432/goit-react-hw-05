@@ -3,8 +3,14 @@ import css from "./navigation.module.css";
 
 const Navigation = () => {
   return (
-    <div>
+    <div className={css.containerHeader}>
       <header className={css.headerItem}>
+        <h1 className={css.mainLogo}>
+          <NavLink className={css.logoStyled} to="/">
+            TOP MOVIES
+          </NavLink>
+        </h1>
+
         <nav>
           <ul className={css.listHeader}>
             <li>
