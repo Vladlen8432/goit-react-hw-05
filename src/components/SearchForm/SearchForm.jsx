@@ -15,25 +15,20 @@ const SearchForm = ({ onHandleSubmit }) => {
   };
   return (
     <div className={css.containerForm}>
-      <form onSubmit={handleSubmit} action="">
-        <input type="text" value={query} name="query" onChange={handleChange} />
-        <button type="submit">Search</button>
+      <form className={css.formItem} onSubmit={handleSubmit} action="">
+        <input
+          className={css.inputForm}
+          type="text"
+          value={query}
+          name="query"
+          onChange={handleChange}
+        />
+        <button className={css.formButton} type="submit">
+          Search
+        </button>
       </form>
     </div>
   );
 };
 
 export default SearchForm;
-
-// const SearchForm = () => {
-//   return (
-//     <div>
-//       <form action="">
-//         <input type="text" name="query" />
-//         <button type="submit">Search</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default SearchForm;

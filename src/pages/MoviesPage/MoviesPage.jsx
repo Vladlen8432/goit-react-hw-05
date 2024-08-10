@@ -1,6 +1,6 @@
 import MoviesList from "../../components/MovieList/MovieList";
 import SearchForm from "../../components/SearchForm/SearchForm";
-import { useFetchByQuery } from '../../hooks/useFetchByQuery';
+import { useFetchByQuery } from "../../hooks/useFetchByQuery";
 
 const MoviesPage = () => {
   const { movies, isLoading, error, onHandleSubmit } = useFetchByQuery();
@@ -15,13 +15,3 @@ const MoviesPage = () => {
 };
 
 export default MoviesPage;
-
-// const MoviesPage = () => {
-//   return (
-//     <div>
-//       <h1>Movies page</h1>
-//     </div>
-//   );
-// };
-
-// export default MoviesPage;

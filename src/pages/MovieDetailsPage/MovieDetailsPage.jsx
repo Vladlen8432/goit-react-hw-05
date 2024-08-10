@@ -63,12 +63,22 @@ const MovieDetailsPage = () => {
           </div>
 
           <div>
-            <ul>
+            <ul className={css.nestedRouteList}>
               <li>
-                <NavLink to={`/movies/${movieId}/cast`}>Cast</NavLink>
+                <NavLink
+                  className={css.nestedRouteLink}
+                  to={`/movies/${movieId}/cast`}
+                >
+                  Cast
+                </NavLink>
               </li>
               <li>
-                <NavLink to={`/movies/${movieId}/reviews`}>Reviews</NavLink>
+                <NavLink
+                  className={css.nestedRouteLink}
+                  to={`/movies/${movieId}/reviews`}
+                >
+                  Reviews
+                </NavLink>
               </li>
             </ul>
           </div>
